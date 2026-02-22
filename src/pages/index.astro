@@ -1,13 +1,96 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+
+const frontEndSkills = [
+    'CSS preprocessors',
+    'SVG & animations',
+    'White-labelling',
+    'Web components',
+    'React + Vite',
+    'Storybook',
+    'Tailwind',
+    'Next.js',
+    'Svelte',
+    'Astro',
+    'a11y',
+    'msw',
+    'UX',
+    '*',
+];
+const baseDelay = 120;
 ---
 
 <BaseLayout>
-</BaseLayout>
-<h3>Skills</h3>
+    <main aria-labelledby="my-skills">
+        <h3 id="my-skills">
+            <span aria-hidden="true">:: My Skills ::</span>
+        </h3>
 
-<nav>
-    <span>Front End</span>
-    <span>Back End</span>
-    <span>Back End</span>
-</nav>
+        <section aria-labelledby="frontend-skills">
+            <h4 class="skill-type"><span>Front End</span></h4>
+
+            <div id="display-skills-wrapper">
+                <ul id="display-skills">
+                    {frontEndSkills.map((skill, i) => (
+                        <li class="skill" style={`animation-delay: ${(i + 1) * 4 * baseDelay}ms`}>
+                            {skill}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+
+<style>
+    main {
+        width: 50%;
+        height: 100%;
+        border-left: var(--common-line);
+        border-right: var(--common-line);
+    }
+
+    #my-skills, .skill-type {
+        padding-left: 0.5rem;
+        border-bottom: var(--common-line);
+    }
+
+    #my-skills > span, .skill-type > span {
+        margin-left: 0.5rem;
+    }
+
+    #display-skills-wrapper {
+        position: relative;
+        #display-skills {
+            position: absolute;
+            top: -1.5rem;
+            left: -1.5rem;
+        }
+    }
+    .skill {
+        opacity: 0;
+        color: black;
+        animation: fade-in 8s ease forwards;
+        list-style: none;
+        margin: 0;
+    }
+
+    @keyframes fade-in {
+        to {
+            opacity: 1;
+            color: var(--primaryColor);
+        }
+    }
+
+    @media (max-width: 640px) {
+        main {
+            width: 90%;
+            height: fit-content(100%);
+        }
+
+        #display-skills {
+            margin-left: 2px;
+        }
+    }
+</style>

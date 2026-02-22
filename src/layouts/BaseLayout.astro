@@ -1,90 +1,69 @@
 ---
-
+import "../styles/global.css";
+import Social from "../components/Social.astro";
 ---
 
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="./global.css" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Alex Gochenour's portfolio site</title>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Alex Gochenour's portfolio site</title>
+    </head>
 
-<nav id="base-layout-nav">
-    <a id="title" href="/"><h1>Alex Gochenour</h1></a>
-    <h2>Senior Software Engineer</h2>
-    <div>
-        <a class="page-navigation-link" href="/projects">Projects</a>
-        <a class="page-navigation-link" href="/gallery">Gallery</a>
-        <a class="page-navigation-link" href="/about">About</a>
-    </div>
-</nav>
-</body>
+    <body>
+        <nav>
+            <a href="/"><h1>Alex Gochenour</h1></a>
+            <h2>Software Engineer</h2>
+            <div>
+                <a href="/projects">Projects</a>
+                <a href="/gallery">Gallery</a>
+                <a href="/about">About</a>
+            </div>
+        </nav>
+
+        <section>
+            <slot />
+        </section>
+
+        <footer>
+            <Social platform="linkedin.com/in" handle="alex-gochenour" icon="LinkedIn" />
+            <Social platform="npmjs.com/package" handle="gochenour" icon="npm" />
+            <Social platform="youtube.com" handle="@alexgochenour8740" icon="YouTube" />
+        </footer>
+    </body>
 </html>
 
 <style>
-    :root {
-        --border: var(--primaryColor) solid 1px;
-        --largePadding: 0.5rem;
-        --smallPadding: 0.25rem;
-        --primaryColor: #93a48c;
-        --primaryColorLightMode: #2e6e15;
-        --longTransition: 5s;
-        --toggleSwitchTransition: .4s;
-        user-select: none;
-    }
-
-    html {
-        color-scheme: light dark;
-    }
-
     body {
-        background-color: black;
-        color: var(--primaryColor);
-        font-family: 'Source Code Pro', monospace;
-
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-        overscroll-behavior: none;
-        touch-action: none;
-        position: fixed;
-        inset: 0;
+        display: grid;
+        grid-template-rows: 165px 1fr 3rem;
     }
-
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-        max-width: 100%;
-    }
-
-    body::before {
-        content: "";
-
-        position: fixed;
-
-        inset: 0.5rem;
-        border: 1px solid var(--primaryColor);
-        pointer-events: none;
-        z-index: 9999;
-    }
-
-    #base-layout-nav {
+    nav {
         text-align: center;
-        border-bottom: var(--primaryColor) 1px solid;
+        border-bottom: var(--common-line);
         margin: 0 0.5rem;
         padding-bottom: 0.5rem;
+
+        a {
+            color: inherit;
+        }
     }
 
-    #title, .page-navigation-link {
-        color: inherit;
+    section {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer {
+        text-align: center;
+        border-top: var(--common-line);
+        margin: 0 0.5rem;
+        padding: 0.5rem;
+        background: black;
+        z-index: 10;
     }
 </style>
 

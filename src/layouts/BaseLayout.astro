@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Social from "../components/Social.astro";
 ---
 
 <html lang="en">
@@ -15,7 +16,7 @@ import "../styles/global.css";
     <body>
         <nav>
             <a href="/"><h1>Alex Gochenour</h1></a>
-            <h2>Senior Software Engineer</h2>
+            <h2>Software Engineer</h2>
             <div>
                 <a href="/projects">Projects</a>
                 <a href="/gallery">Gallery</a>
@@ -28,7 +29,9 @@ import "../styles/global.css";
         </section>
 
         <footer>
-            Alex Gochenour 2026 - Year of the Horse
+            <Social platform="linkedin.com/in" handle="alex-gochenour" icon="LinkedIn" />
+            <Social platform="npmjs.com/package" handle="gochenour" icon="npm" />
+            <Social platform="youtube.com" handle="@alexgochenour8740" icon="YouTube" />
         </footer>
     </body>
 </html>
@@ -36,7 +39,7 @@ import "../styles/global.css";
 <style>
     body {
         display: grid;
-        grid-template-rows: 20% 1fr 3rem;
+        grid-template-rows: 165px 1fr 3rem;
     }
     nav {
         text-align: center;
@@ -59,6 +62,8 @@ import "../styles/global.css";
         border-top: var(--common-line);
         margin: 0 0.5rem;
         padding: 0.5rem;
+        background: black;
+        z-index: 10;
     }
 </style>
 

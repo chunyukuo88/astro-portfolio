@@ -1,0 +1,11 @@
+---
+const { platform, handle, icon } = Astro.props;
+---
+<a href={`https://www.${platform}/${handle}`}>{icon}</a>
+
+<style>
+    a {
+        color: inherit;
+        margin: 0 0.5rem;
+    }
+</style>

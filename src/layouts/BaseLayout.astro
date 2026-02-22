@@ -14,34 +14,44 @@ import Social from "../components/Social.astro";
     </head>
 
     <body>
-        <nav>
-            <a href="/"><h1>Alex Gochenour</h1></a>
-            <h2>Software Engineer</h2>
-            <div>
-                <a href="/projects">Projects</a>
-                <a href="/gallery">Gallery</a>
-                <a href="/about">About</a>
-            </div>
-        </nav>
+        <div class="layout">
+            <header>
+                <a href="/"><h1>Alex Gochenour</h1></a>
+                <h2>Software Engineer</h2>
+                <div>
+                    <a href="/projects">Projects</a>
+                    <a href="/gallery">Gallery</a>
+                    <a href="/about">About</a>
+                </div>
+            </header>
 
-        <section>
-            <slot />
-        </section>
+            <main>
+                <slot />
+            </main>
 
-        <footer>
-            <Social platform="linkedin.com/in" handle="alex-gochenour" icon="LinkedIn" />
-            <Social platform="npmjs.com/package" handle="gochenour" icon="npm" />
-            <Social platform="youtube.com" handle="@alexgochenour8740" icon="YouTube" />
-        </footer>
+            <footer>
+                <Social platform="linkedin.com/in" handle="alex-gochenour" icon="LinkedIn" />
+                <Social platform="npmjs.com/package" handle="gochenour" icon="npm" />
+                <Social platform="youtube.com" handle="@alexgochenour8740" icon="YouTube" />
+            </footer>
+        </div>
     </body>
 </html>
 
 <style>
-    body {
-        display: grid;
-        grid-template-rows: 165px 1fr 3rem;
+    html, body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
     }
-    nav {
+
+    .layout {
+        height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    header {
         text-align: center;
         border-bottom: var(--common-line);
         margin: 0 0.5rem;
@@ -52,9 +62,10 @@ import Social from "../components/Social.astro";
         }
     }
 
-    section {
+    main {
         display: flex;
         justify-content: center;
+        overflow-y: auto;
     }
 
     footer {

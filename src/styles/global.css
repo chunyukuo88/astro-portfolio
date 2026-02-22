@@ -6,6 +6,7 @@
     --primaryColorLightMode: #2e6e15;
     --longTransition: 5s;
     --toggleSwitchTransition: .4s;
+    --common-line: 1px solid var(--primaryColor);
     user-select: none;
 }
 

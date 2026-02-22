@@ -3,14 +3,25 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
 <BaseLayout>
-</BaseLayout>
-<h3>Skills</h3>
+    <main>
+        <h3>Skills</h3>
 
-<nav>
-    <span>Front End</span>
-    <span>Back End</span>
-    <span>Cloud</span>
-    <span>SaaS</span>
-    <span>Tooling</span>
-    <span>Explorations</span>
-</nav>
+        <nav>
+            <span>Front End</span>
+            <span>Back End</span>
+            <span>Cloud</span>
+            <span>SaaS</span>
+            <span>Tooling</span>
+            <span>Explorations</span>
+        </nav>
+    </main>
+</BaseLayout>
+
+
+<style>
+    main {
+        width: 50rem;
+        height: 100%;
+        border-left: var(--common-line);
+    }
+</style>

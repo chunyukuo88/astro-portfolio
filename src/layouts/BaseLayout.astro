@@ -24,6 +24,10 @@ import "../styles/global.css";
 </nav>
 </body>
 
+<div id="content-alignment">
+    <slot />
+</div>
+
 </html>
 
 <style>
@@ -36,6 +40,12 @@ import "../styles/global.css";
 
     #title, .page-navigation-link {
         color: inherit;
+    }
+
+    #content-alignment {
+        display: flex;
+        justify-content: center;
+        height: 100%;
     }
 </style>
 

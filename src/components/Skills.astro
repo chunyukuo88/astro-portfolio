@@ -1,0 +1,146 @@
+---
+import { skills } from "../content/skills";
+const baseDelay = 120;
+---
+
+<main aria-labelledby="my-skills">
+    <div class="column-shell">
+        <h3 id="my-skills">
+            <span aria-hidden="true">:: My Skills ::</span>
+        </h3>
+
+        <section aria-labelledby="frontend-skills">
+            <h4 class="skill-type"><span>Front End</span></h4>
+
+            <div class="display-skills-wrapper">
+                <ul class="display-skills">
+                    {skills.frontEndSkills.map((skill, i) => (
+                        <li class="skill" style={`animation-delay: ${(i + 1) * 4 * baseDelay}ms`}>
+                            {skill}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
+        <section aria-labelledby="backend-skills">
+            <h4 class="skill-type"><span>Back End</span></h4>
+
+            <div class="display-skills-wrapper">
+                <ul class="display-skills">
+                    {skills.backEndSkills.map((skill, i) => (
+                        <li class="skill" style={`animation-delay: ${(i + 1) * 4 * baseDelay}ms`}>
+                            {skill}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
+        <section aria-labelledby="aws-skills">
+            <h4 class="skill-type"><span>AWS</span></h4>
+
+            <div class="display-skills-wrapper">
+                <ul class="display-skills">
+                    {skills.awsSkills.map((skill, i) => (
+                        <li class="skill" style={`animation-delay: ${(i + 1) * 4 * baseDelay}ms`}>
+                            {skill}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
+        <section aria-labelledby="saas-skills">
+            <h4 class="skill-type"><span>SaaS</span></h4>
+
+            <div class="display-skills-wrapper">
+                <ul class="display-skills">
+                    {skills.saasSkills.map((skill, i) => (
+                        <li class="skill" style={`animation-delay: ${(i + 1) * 4 * baseDelay}ms`}>
+                            {skill}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
+        <section aria-labelledby="tooling">
+            <h4 class="skill-type"><span>Tooling</span></h4>
+
+            <div class="display-skills-wrapper">
+                <ul class="display-skills">
+                    {skills.tooling.map((skill, i) => (
+                        <li class="skill" style={`animation-delay: ${(i + 1) * 4 * baseDelay}ms`}>
+                            {skill}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
+        <section aria-labelledby="other">
+            <h4 class="skill-type"><span>Other</span></h4>
+
+            <div class="display-skills-wrapper">
+                <ul class="display-skills">
+                    {skills.other.map((skill, i) => (
+                        <li class="skill" style={`animation-delay: ${(i + 1) * 4 * baseDelay}ms`}>
+                            {skill}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
+        <br />
+    </div>
+</main>
+
+<style>
+    main {
+        width: 50%;
+        box-sizing: border-box;
+        height: 100%;
+    }
+
+    .column-shell {
+        border-left: var(--common-line);
+        border-right: var(--common-line);
+    }
+
+    section {
+        margin-bottom: 2rem;
+
+    }
+
+    #my-skills, .skill-type {
+        margin-top: 0;
+        padding-left: 2rem;
+        border-bottom: var(--common-line);
+    }
+
+    #my-skills > span, .skill-type > span {
+        margin-left: 0.5rem;
+    }
+
+    .skill {
+        opacity: 0;
+        color: black;
+        animation: fade-in 8s ease forwards;
+        list-style: none;
+        margin: 0;
+    }
+
+    @keyframes fade-in {
+        to {
+            opacity: 1;
+            color: var(--primaryColor);
+        }
+    }
+
+    @media (max-width: 640px) {
+        main {
+            width: 90%;
+            height: fit-content(100%);
+        }
+
+        .display-skills {
+            margin-left: 2px;
+        }
+    }
+</style>

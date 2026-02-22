@@ -3,49 +3,62 @@ import "../styles/global.css";
 ---
 
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Alex Gochenour's portfolio site</title>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Alex Gochenour's portfolio site</title>
+    </head>
 
-<nav id="base-layout-nav">
-    <a id="title" href="/"><h1>Alex Gochenour</h1></a>
-    <h2>Senior Software Engineer</h2>
-    <div>
-        <a class="page-navigation-link" href="/projects">Projects</a>
-        <a class="page-navigation-link" href="/gallery">Gallery</a>
-        <a class="page-navigation-link" href="/about">About</a>
-    </div>
-</nav>
-</body>
+    <body>
+        <nav>
+            <a href="/"><h1>Alex Gochenour</h1></a>
+            <h2>Senior Software Engineer</h2>
+            <div>
+                <a href="/projects">Projects</a>
+                <a href="/gallery">Gallery</a>
+                <a href="/about">About</a>
+            </div>
+        </nav>
 
-<div id="content-alignment">
-    <slot />
-</div>
+        <section>
+            <slot />
+        </section>
 
+        <footer>
+            Alex Gochenour 2026 - Year of the Horse
+        </footer>
+    </body>
 </html>
 
 <style>
-    #base-layout-nav {
+    body {
+        display: grid;
+        grid-template-rows: 20% 1fr 3rem;
+    }
+    nav {
         text-align: center;
-        border-bottom: var(--primaryColor) 1px solid;
+        border-bottom: var(--common-line);
         margin: 0 0.5rem;
         padding-bottom: 0.5rem;
+
+        a {
+            color: inherit;
+        }
     }
 
-    #title, .page-navigation-link {
-        color: inherit;
-    }
-
-    #content-alignment {
+    section {
         display: flex;
         justify-content: center;
-        height: 100%;
+    }
+
+    footer {
+        text-align: center;
+        border-top: var(--common-line);
+        margin: 0 0.5rem;
+        padding: 0.5rem;
     }
 </style>
 

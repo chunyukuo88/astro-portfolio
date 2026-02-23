@@ -63,7 +63,7 @@ export const skills = {
         '*',
     ],
     other: [
-        '10+ years, video game industry',
+        'Video game industry, 10+ years',
         'YouTube channel',
         'gochenour CLI',
         'Ubuntu',

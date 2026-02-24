@@ -1,12 +1,12 @@
 :root {
     --border: var(--primaryColor) solid 1px;
+    --primaryColorLightMode: #2e6e15;
+    --primaryColor: #93a48c;
+    --common-line: 1px solid var(--primaryColor);
     --largePadding: 0.5rem;
     --smallPadding: 0.25rem;
-    --primaryColor: #93a48c;
-    --primaryColorLightMode: #2e6e15;
     --longTransition: 5s;
     --toggleSwitchTransition: .4s;
-    --common-line: 1px solid var(--primaryColor);
     user-select: none;
 }
 

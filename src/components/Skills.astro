@@ -1,5 +1,5 @@
 ---
-import Cube from '../components/Cube.astro';
+import Cube from './Cube.jsx';
 import { skills } from "../content/skills";
 const baseDelay = 120;
 ---
@@ -50,11 +50,11 @@ const baseDelay = 120;
             </div>
         </section>
         <section aria-labelledby="saas-skills">
-            <h4 class="skill-type"><span>SaaS</span></h4>
+            <h4 class="skill-type"><span>CI/CD and the like</span></h4>
 
             <div class="display-skills-wrapper">
                 <ul class="display-skills">
-                    {skills.saasSkills.map((skill, i) => (
+                    {skills.cicdSkills.map((skill, i) => (
                         <li class="skill" style={`animation-delay: ${(i + 1) * 4 * baseDelay}ms`}>
                             {skill}
                         </li>
@@ -90,7 +90,7 @@ const baseDelay = 120;
         </section>
         <br>
     </div>
-    <Cube />
+    <Cube client:load />
 </main>
 
 <style>

@@ -40,7 +40,7 @@ export const skills = {
         'S3',
         'λ',
     ],
-    saasSkills: [
+    cicdSkills: [
         'Github Actions',
         'Optimizely',
         'BitBucket',

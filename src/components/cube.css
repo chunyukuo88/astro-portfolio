@@ -48,7 +48,7 @@
 
 .cube-lid {
     background: black;
-    transform: rotateX(90deg) translateZ(3rem);
+    transform: rotateX(90deg) translateZ(49px);
 }
 
 #cube div span {

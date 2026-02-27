@@ -19,12 +19,11 @@ import ThemeIcon from "../components/ThemeIcon.astro";
             <header>
                 <a href="/"><h1>Alex Gochenour</h1></a>
                 <h2>Software Engineer</h2>
-                <div>
-                    <!--<a href="/projects">Projects</a>-->
-                    <!--<a href="/gallery">Gallery</a>-->
-                    <!--<a href="/about">About</a>-->
-                </div>
-                <ThemeIcon />
+                <nav>
+                    <a href="/projects">Projects</a>
+                    <ThemeIcon />
+                    <a href="/about">About Me</a>
+                </nav>
             </header>
 
             <main>
@@ -62,6 +61,12 @@ import ThemeIcon from "../components/ThemeIcon.astro";
         a {
             color: inherit;
         }
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     :global(.dark) header {

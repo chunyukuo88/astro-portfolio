@@ -32,6 +32,12 @@
     border: 1px solid black;
 }
 
+:global(.dark) #cube.reverse > div > span,
+:global(.dark) #cube.reverse > .cube-lid {
+    background: black;
+    border: var(--common-line-dark);
+}
+
 #cube div {
     position: absolute;
     width: var(--cubeSideLength);
@@ -53,6 +59,11 @@
     height: var(--cubeSideLength);
     background: black;
     border: var(--common-line);
+}
+
+:global(.dark) #cube div span {
+    background: black;
+    border: var(--common-line-dark);
 }
 
 #cube div span:nth-child(1) {

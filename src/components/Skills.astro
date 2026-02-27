@@ -105,9 +105,13 @@ const baseDelay = 120;
         border-right: var(--common-line);
     }
 
+    :global(.dark) .column-shell {
+        border-left: var(--common-line-dark);
+        border-right: var(--common-line-dark);
+    }
+
     section {
         margin-bottom: 2rem;
-
     }
 
     #my-skills, .skill-type {
@@ -116,11 +120,16 @@ const baseDelay = 120;
         border-bottom: var(--common-line);
     }
 
+    :global(.dark) #my-skills, :global(.dark) .skill-type {
+        border-bottom: var(--common-line-dark);
+    }
+
     #my-skills > span, .skill-type > span {
         margin-left: 0.5rem;
     }
 
     .skill {
+        --fadeColor: var('black');
         opacity: 0;
         color: black;
         animation: fade-in 8s ease forwards;
@@ -131,7 +140,7 @@ const baseDelay = 120;
     @keyframes fade-in {
         to {
             opacity: 1;
-            color: var(--primaryColor);
+            color: var(--fadeColor);
         }
     }
 

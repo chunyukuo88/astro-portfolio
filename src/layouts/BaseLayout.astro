@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Social from "../components/Social.astro";
+import ThemeIcon from "../components/ThemeIcon.astro";
 ---
 
 <html lang="en">
@@ -23,6 +24,7 @@ import Social from "../components/Social.astro";
                     <!--<a href="/gallery">Gallery</a>-->
                     <!--<a href="/about">About</a>-->
                 </div>
+                <ThemeIcon />
             </header>
 
             <main>
@@ -62,6 +64,10 @@ import Social from "../components/Social.astro";
         }
     }
 
+    :global(.dark) header {
+        border-bottom: var(--common-line-dark);
+    }
+
     main {
         display: flex;
         justify-content: center;
@@ -75,6 +81,10 @@ import Social from "../components/Social.astro";
         padding: 0.5rem;
         background: black;
         z-index: 10;
+    }
+
+    :global(.dark) {
+        background: var(--primaryColor);
     }
 </style>
 

@@ -45,11 +45,14 @@ body {
 
 body::before {
     content: "";
-
     position: fixed;
-
     inset: 0.5rem;
     border: var(--common-line);
     pointer-events: none;
     z-index: 9999;
 }
+
+html.dark body::before {
+    border: var(--common-line-dark);
+}
+

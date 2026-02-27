@@ -54,12 +54,12 @@ export const skills = {
     ],
     tooling: [
         'Docker Compose',
+        'Claude Code',
         'JetBrains',
         'Vitest',
         'Codex',
         'Jest',
-        'RTL',
-        'Vim',
+        'mcp',
         '*',
     ],
     other: [

@@ -4,7 +4,6 @@ import './cube.css';
 export default function Cube(){
     const [isDefaultDir, setDirection] = useState(true);
     function clickHandler(){
-        console.log('hi')
         setDirection(!isDefaultDir);
     }
 

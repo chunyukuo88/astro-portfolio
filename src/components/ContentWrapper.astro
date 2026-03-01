@@ -1,0 +1,26 @@
+---
+---
+
+<main aria-labelledby="content-wrapper">
+    <div class="column-shell">
+        <slot />
+    </div>
+</main>
+
+<style>
+    main {
+        width: 50%;
+        box-sizing: border-box;
+        height: 100%;
+    }
+
+    .column-shell {
+        border-left: var(--common-line);
+        border-right: var(--common-line);
+    }
+
+    :global(.dark) .column-shell {
+        border-left: var(--common-line-dark);
+        border-right: var(--common-line-dark);
+    }
+</style>

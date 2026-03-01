@@ -2,7 +2,6 @@ import './project-cards.css';
 import { useEffect, useRef } from "preact/hooks";
 
 const OVERLAP = 300;
-
 const cards = [
     'SvelteKit — WOH',
     'Serverless WOH API',
@@ -21,26 +20,29 @@ export default function ProjectCards() {
         const getScrollParent = (el) => {
             while (el && el !== document.body) {
                 const { overflow, overflowY } = getComputedStyle(el);
-                if (/auto|scroll/.test(overflow + overflowY)) return el;
+                if (/auto|scroll/.test(overflow + overflowY)) {
+                    return el;
+                }
                 el = el.parentElement;
             }
             return window;
         };
 
         const scrollParent = getScrollParent(cards[0]);
-        const getScrollY = () =>
-            scrollParent === window ? window.scrollY : scrollParent.scrollTop;
 
         let naturalTops;
         const locked = new Array(cards.length).fill(false);
 
         requestAnimationFrame(() => {
-            naturalTops = cards.map(card => card.getBoundingClientRect().top + getScrollY());
+            naturalTops = cards.map((card) => {
+                const cardTop = card.getBoundingClientRect().top;
+                return cardTop + scrollParent.scrollTop;
+            });
         });
 
         const onScroll = () => {
             if (!naturalTops) return;
-            const scrollY = getScrollY();
+            const scrollY = scrollParent.scrollTop;
 
             cards.forEach((card, i) => {
                 if (i === 0 || locked[i]) return;

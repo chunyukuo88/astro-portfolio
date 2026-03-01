@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Social from "../components/Social.astro";
+import Cube from '../components/Cube';
 import ThemeIcon from "../components/ThemeIcon.astro";
 ---
 
@@ -29,6 +30,7 @@ import ThemeIcon from "../components/ThemeIcon.astro";
             <main>
                 <slot />
             </main>
+            <Cube client:load />
 
             <footer>
                 <Social platform="linkedin.com/in" handle="alex-gochenour" icon="LinkedIn" />

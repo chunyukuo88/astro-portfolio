@@ -1,6 +1,16 @@
 import './project-cards.css';
 import { useEffect, useRef } from "preact/hooks";
 
+const OVERLAP = 300;
+
+const cards = [
+    'SvelteKit — WOH',
+    'Serverless WOH API',
+    'Astro — this site',
+    'GO workouts api',
+    'NODE gochenour CLI',
+];
+
 export default function ProjectCards() {
     const cardsRef = useRef([]);
 
@@ -18,12 +28,18 @@ export default function ProjectCards() {
         };
 
         const scrollParent = getScrollParent(cards[0]);
-        const getScrollY = () => scrollParent === window ? window.scrollY : scrollParent.scrollTop;
+        const getScrollY = () =>
+            scrollParent === window ? window.scrollY : scrollParent.scrollTop;
 
-        const naturalTops = cards.map(card => card.getBoundingClientRect().top + getScrollY());
+        let naturalTops;
         const locked = new Array(cards.length).fill(false);
 
+        requestAnimationFrame(() => {
+            naturalTops = cards.map(card => card.getBoundingClientRect().top + getScrollY());
+        });
+
         const onScroll = () => {
+            if (!naturalTops) return;
             const scrollY = getScrollY();
 
             cards.forEach((card, i) => {
@@ -33,13 +49,10 @@ export default function ProjectCards() {
                 const totalTravel = naturalTops[i] - targetTop;
                 const scrollStart = naturalTops[i] - window.innerHeight;
                 const progress = Math.min(1, Math.max(0, (scrollY - scrollStart) / totalTravel));
-                const translateY = -totalTravel * progress;
 
-                card.style.transform = `translateY(${translateY}px)`;
+                card.style.transform = `translateY(${-totalTravel * progress}px)`;
 
-                if (progress >= 1) {
-                    locked[i] = true;
-                }
+                if (progress >= 1) locked[i] = true;
             });
         };
 
@@ -66,13 +79,3 @@ export default function ProjectCards() {
         </>
     );
 }
-
-const OVERLAP = 300;
-
-const cards = [
-    'SvelteKit — WOH',
-    'Serverless WOH API',
-    'Astro — this site',
-    'GO workouts api',
-    'NODE gochenour CLI',
-];

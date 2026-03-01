@@ -41,3 +41,10 @@
     background: blue;
     clip-path: polygon(0% 20%, 20% 20%, 20% 0%, 40% 0%, 40% 20%, 60% 20%, 60% 0%, 80% 0%, 80% 20%, 100% 20%, 100% 100%, 0% 100%);
 }
+
+.hidden-card {
+    position: absolute;
+    background: salmon;
+    bottom: 0;
+    z-index: -1;
+}

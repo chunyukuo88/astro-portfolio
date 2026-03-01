@@ -45,16 +45,17 @@ export default function ProjectCards() {
             const scrollY = scrollParent.scrollTop;
 
             cards.forEach((card, i) => {
-                if (i === 0 || locked[i]) return;
-
+                if (i === 0 || locked[i]) {
+                    return;
+                }
                 const targetTop = naturalTops[0] + i * OVERLAP;
                 const totalTravel = naturalTops[i] - targetTop;
                 const scrollStart = naturalTops[i] - window.innerHeight;
                 const progress = Math.min(1, Math.max(0, (scrollY - scrollStart) / totalTravel));
-
                 card.style.transform = `translateY(${-totalTravel * progress}px)`;
-
-                if (progress >= 1) locked[i] = true;
+                if (progress >= 1) {
+                    locked[i] = true;
+                }
             });
         };
 
@@ -77,6 +78,9 @@ export default function ProjectCards() {
                         {label}
                     </div>
                 ))}
+                <div class="card hidden-card">
+                    Check back for the latest live projects!
+                </div>
             </div>
         </>
     );

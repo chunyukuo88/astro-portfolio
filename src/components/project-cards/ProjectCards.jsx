@@ -26,9 +26,9 @@ export default function ProjectCards() {
             <div className="project-cards">
                 <div className="card">SvelteKit  WOH </div>
                 <div className="card" style={card2IsVisible ? { background: 'orange'} : {}}>Serverless WOH API</div>
-                <div className="card">Astro	   this site</div>
-                <div className="card">GO	   workouts api</div>
-                <div className="card">NODE	   gochenour CLI</div>
+                <div className="card">Astro	this site</div>
+                <div className="card">GO workouts api</div>
+                <div className="card">NODE gochenour CLI</div>
             </div>
         </>
     )

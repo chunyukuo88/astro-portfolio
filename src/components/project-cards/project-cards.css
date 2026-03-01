@@ -4,12 +4,17 @@
     padding-left: 2rem;
 }
 
+.project-cards {
+    position: relative;
+}
+
 .card {
     width: 100%;
     height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: sticky;
 }
 
 .card:nth-child(1) {

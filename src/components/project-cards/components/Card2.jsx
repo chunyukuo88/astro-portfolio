@@ -26,6 +26,7 @@ export default function Card2() {
                 <div className={styles.block}></div>
                 <div className={styles.block}></div>
                 <div className={styles.block}></div>
+                <div className={styles.block}></div>
             </div>
         </div>
     );

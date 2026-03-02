@@ -1,7 +1,7 @@
 ---
 const { platform, handle, icon } = Astro.props;
 ---
-<a href={`https://www.${platform}/${handle}`}>{icon}</a>
+<a href={`https://www.${platform}/${handle}`} target="_blank">{icon}</a>
 
 <style>
     a {

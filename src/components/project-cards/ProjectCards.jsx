@@ -2,7 +2,7 @@ import './project-cards.css';
 import { useEffect, useRef } from "preact/hooks";
 import { Card1, Card2, Card3, Card4, Card5 } from "./components/";
 
-const OVERLAP = 300;
+const OVERLAP = 400;
 const cardObjects = [
     {label: 'SvelteKit — WOH', component: Card1},
     {label: 'Serverless WOH API', component: Card2},
@@ -16,7 +16,6 @@ export default function ProjectCards() {
 
     useEffect(() => {
         const cards = cardsRef.current.filter(Boolean);
-        if (cards.length === 0) return;
 
         const getScrollParent = (el) => {
             while (el && el !== document.body) {
@@ -76,10 +75,10 @@ export default function ProjectCards() {
                         className="card-wrapper"
                         ref={el => cardsRef.current[i] = el}
                     >
-                        <card.component />
+                        <card.component/>
                     </div>
                 ))}
-                <div class="card-wrapper hidden-card">
+                <div className="hidden-card">
                     Check back for the latest live projects!
                 </div>
             </div>

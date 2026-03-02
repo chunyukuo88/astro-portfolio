@@ -1,11 +1,18 @@
 #projects {
     margin-top: 0;
+    margin-bottom: 0;
     border-bottom: var(--common-line);
     padding-left: 2rem;
 }
 
 .project-cards {
     position: relative;
+}
+
+.project-cards-welcome {
+    padding: 0 2rem;
+    text-align: justify;
+    margin: 0
 }
 
 .card-wrapper {

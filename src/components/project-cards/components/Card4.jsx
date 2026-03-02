@@ -15,7 +15,14 @@ export default function Card4() {
                 <div className={styles.block}></div>
                 <div className={styles.block}></div>
             </div>
-            <div className={styles.content}>Golang workouts API</div>
+            <div className={styles.content}>
+            <p>Workouts API</p>
+            <p>Golang, native packages</p>
+            <p>
+                A monorepo of a simple workout API with sign-up and sign-in,
+                as well as CRUD functionality and rigorous separation of concerns.
+            </p>
+            </div>
             <div className={styles["fake-border-bottom"]}>
                 <div className={styles.block}></div>
                 <div className={styles.block}></div>

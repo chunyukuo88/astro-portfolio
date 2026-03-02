@@ -14,7 +14,15 @@ export default function Card3() {
                 <div className={styles.block}></div>
                 <div className={styles.block}></div>
             </div>
-            <div className={styles.content}>Astro — this site</div>
+            <div className={styles.content}>
+                <p>This site</p>
+                <p>
+                    Piqued by its recent tie-up with Cloudflare, I decided to give Astro a try,
+                    and am genuinely impressed by its SEO and performance scores in Lighthouse.
+                    It is also nice to be able to leverage the strengths of multiple front-end technologies,
+                    and this site uses Preact for some components, including the ones you are looking at right now!
+                </p>
+            </div>
             <div className={styles["fake-border-bottom"]}>
                 <div className={styles.block}></div>
                 <div className={styles.block}></div>

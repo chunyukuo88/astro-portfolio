@@ -14,7 +14,14 @@ export default function Card5() {
                 <div className={styles.block}></div>
                 <div className={styles.block}></div>
             </div>
-            <div className={styles.content}>NODE gochenour CLI</div>
+            <div className={styles.content}>
+            <p>The gochenour CLI</p>
+            <p>Node.js, TDD, NPMJS</p>
+            <p>
+                This pre-AI passion project is a love letter to useful automations and CLIs,
+                the things that first got me interested in programming. I created this for teammates to use and to better appreciate CLI design.
+            </p>
+            </div>
         </div>
     );
 }

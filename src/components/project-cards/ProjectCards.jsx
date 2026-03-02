@@ -69,6 +69,7 @@ export default function ProjectCards() {
                 <span aria-hidden="true">Projects</span>
             </h3>
             <div className="project-cards">
+                <h5 className="project-cards-welcome">Note: Links to all projects can be found at the bottom of the page.</h5>
                 {cardObjects.map((card, i) => (
                     <div
                         key={i}

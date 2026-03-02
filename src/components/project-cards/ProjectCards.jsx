@@ -1,5 +1,6 @@
 import './project-cards.css';
 import { useEffect, useRef } from "preact/hooks";
+import { Card1 } from "./components/IrregularCard1.jsx";
 
 const OVERLAP = 300;
 const cards = [
@@ -69,18 +70,19 @@ export default function ProjectCards() {
                 <span aria-hidden="true">Projects</span>
             </h3>
             <div className="project-cards">
-                {cards.map((label, i) => (
-                    <div
-                        key={i}
-                        className="card"
-                        ref={el => cardsRef.current[i] = el}
-                    >
-                        {label}
-                    </div>
-                ))}
-                <div class="card hidden-card">
-                    Check back for the latest live projects!
-                </div>
+                <Card1 />
+                {/*{cards.map((label, i) => (*/}
+                {/*    <div*/}
+                {/*        key={i}*/}
+                {/*        className="card"*/}
+                {/*        ref={el => cardsRef.current[i] = el}*/}
+                {/*    >*/}
+                {/*        {label}*/}
+                {/*    </div>*/}
+                {/*))}*/}
+                {/*<div class="card hidden-card">*/}
+                {/*    Check back for the latest live projects!*/}
+                {/*</div>*/}
             </div>
         </>
     );

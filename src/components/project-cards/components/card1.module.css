@@ -1,12 +1,16 @@
 .card {
+    border-top: var(--common-line);
     display: block;
 }
 
 .content {
     height: 399px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+    text-align: justify;
 }
 
 .fake-border {

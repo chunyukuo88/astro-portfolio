@@ -1,22 +1,22 @@
-import './irregular-cards.css';
+import styles from './card1.module.css';
 
-export function Card1() {
+export default function Card1() {
     return (
-    <div className="card">
-        <div className="content">SvelteKit — WOH</div>
-        <div className="fake-border">
-            <div className="block"></div>
-            <div className="block"></div>
-            <div className="block"></div>
-            <div className="block"></div>
-            <div className="block"></div>
+        <div className={styles.card}>
+            <div className={styles.content}>Serverless WOH API</div>
+            <div className={styles["fake-border"]}>
+                <div className={styles.block}></div>
+                <div className={styles.block}></div>
+                <div className={styles.block}></div>
+                <div className={styles.block}></div>
+                <div className={styles.block}></div>
+            </div>
+            <div className={styles["bottom-row"]}>
+                <div className={styles.block}></div>
+                <div className={styles.block}></div>
+                <div className={styles.block}></div>
+                <div className={styles.block}></div>
+            </div>
         </div>
-        <div className="bottom-row">
-            <div className="block"></div>
-            <div className="block"></div>
-            <div className="block"></div>
-            <div className="block"></div>
-        </div>
-    </div>
     );
 }

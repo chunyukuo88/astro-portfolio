@@ -1,6 +1,6 @@
 import './project-cards.css';
 import { useEffect, useRef } from "preact/hooks";
-import { Card1 } from "./components/IrregularCard1.jsx";
+import { Card1, Card2 } from "./components/";
 
 const OVERLAP = 300;
 const cards = [
@@ -71,6 +71,7 @@ export default function ProjectCards() {
             </h3>
             <div className="project-cards">
                 <Card1 />
+                <Card2 />
                 {/*{cards.map((label, i) => (*/}
                 {/*    <div*/}
                 {/*        key={i}*/}

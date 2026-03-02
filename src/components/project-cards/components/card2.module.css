@@ -1,0 +1,40 @@
+.card {
+    margin-top: 4rem;
+    display: block;
+}
+
+.content {
+    height: 299px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fake-border-top, .fake-border-bottom {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1px);
+}
+
+.fake-border-top :not(.block:nth-child(1)) {
+    border-top: var(--common-line);
+}
+
+.fake-border-bottom .block:nth-child(1) {
+    border-bottom: var(--common-line);
+}
+
+.bottom-row {
+    height: 100px;
+    display: grid;
+    grid-template-areas: ". b b b b";
+}
+
+.bottom-row .block {
+    grid-area: b;
+    border-bottom: var(--common-line);
+}
+
+.bottom-row .block:nth-child(1) {
+    border-left: var(--common-line);
+}

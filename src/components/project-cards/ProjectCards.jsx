@@ -1,14 +1,14 @@
 import './project-cards.css';
 import { useEffect, useRef } from "preact/hooks";
-import {Card1, Card2, Card3, Card4, Card5} from "./components/";
+import { Card1, Card2, Card3, Card4, Card5 } from "./components/";
 
 const OVERLAP = 300;
-const cards = [
-    'SvelteKit — WOH',
-    'Serverless WOH API',
-    'Astro — this site',
-    'GO workouts api',
-    'NODE gochenour CLI',
+const cardObjects = [
+    {label: 'SvelteKit — WOH', component: Card1},
+    {label: 'Serverless WOH API', component: Card2},
+    {label: 'Astro — this site', component: Card3},
+    {label: 'GO workouts api', component: Card4},
+    {label: 'NODE gochenour CLI', component: Card5},
 ];
 
 export default function ProjectCards() {
@@ -70,23 +70,18 @@ export default function ProjectCards() {
                 <span aria-hidden="true">Projects</span>
             </h3>
             <div className="project-cards">
-                <Card1 />
-                <Card2 />
-                <Card3 />
-                <Card4 />
-                <Card5 />
-                {/*{cards.map((label, i) => (*/}
-                {/*    <div*/}
-                {/*        key={i}*/}
-                {/*        className="card"*/}
-                {/*        ref={el => cardsRef.current[i] = el}*/}
-                {/*    >*/}
-                {/*        {label}*/}
-                {/*    </div>*/}
-                {/*))}*/}
-                {/*<div class="card hidden-card">*/}
-                {/*    Check back for the latest live projects!*/}
-                {/*</div>*/}
+                {cardObjects.map((card, i) => (
+                    <div
+                        key={i}
+                        className="card-wrapper"
+                        ref={el => cardsRef.current[i] = el}
+                    >
+                        <card.component />
+                    </div>
+                ))}
+                <div class="card-wrapper hidden-card">
+                    Check back for the latest live projects!
+                </div>
             </div>
         </>
     );

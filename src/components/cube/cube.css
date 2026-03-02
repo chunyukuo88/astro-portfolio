@@ -1,9 +1,9 @@
 :root {
     --cubeSideLength: 100px;
-    --cubeSideLengthSmall: 50px;
+    --cubeSideLengthSmall: 10px;
     --transitionInterval: 0.3s;
     --translateValue: 50px;
-    --translateValueSmall: 25px;
+    --translateValueSmall: 5px;
 }
 
 @keyframes animate {
@@ -137,6 +137,6 @@
     .cube-lid {
         width: 40px;
         height: 40px;
-        transform: rotateX(90deg) translateZ(1.5rem);
+        transform: rotateX(90deg) translateZ(4px);
     }
 }

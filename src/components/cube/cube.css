@@ -19,8 +19,8 @@
     position: absolute;
     width: var(--cubeSideLength);
     height: var(--cubeSideLength);
-    bottom: 10%;
     right: 12%;
+    bottom: 10%;
     transform-style: preserve-3d;
     animation: animate 8s linear infinite;
     transition: var(--transitionInterval);
@@ -99,7 +99,6 @@
 
 @media (max-width: 400px) {
     #cube {
-        top: 77%;
         width: var(--cubeSideLengthSmall);
         height: var(--cubeSideLengthSmall);
     }

@@ -1,7 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import ContentWrapper from "../components/ContentWrapper.astro";
+import ProjectCards from "../components/project-cards/ProjectCards";
 ---
 
 <BaseLayout>
-    <h1>:: Projects ::</h1>
+    <ContentWrapper>
+        <ProjectCards client:load/>
+    </ContentWrapper>
 </BaseLayout>

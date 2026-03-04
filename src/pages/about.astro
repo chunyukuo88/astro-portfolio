@@ -1,8 +1,21 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
     <h1>:: About ::</h1>
+    <div>
+        <img src="/public/crane.png" alt="a crane">
+    </div>
 </BaseLayout>
 
+<style>
+    div {
+        border: var(--common-line);
+        width: 400px;
+    }
+    img {
+        width: 50%;
+        height: auto;
+    }
+</style>

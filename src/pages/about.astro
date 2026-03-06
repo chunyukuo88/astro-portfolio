@@ -1,18 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ContentWrapper from "../components/ContentWrapper.astro";
 ---
 
 <BaseLayout>
-    <h1>:: About ::</h1>
-    <div>
-        <img src="/public/crane.png" alt="a crane">
-    </div>
+    <ContentWrapper>
+        <section>
+            <img src="/crane.png" alt="a line drawing of an origami crane">
+            <p>Thanks for stopping by. I'm a bilingual software engineer based in central Ohio with experience in serverless architectures, single-page and SSR front ends.</p>
+            <p>Stay tuned for more content--in the meantime check out the links below!</p>
+        </section>
+    </ContentWrapper>
 </BaseLayout>
 
 <style>
-    div {
+    section {
+        display: flex;
+        flex-direction: column;
         border: var(--common-line);
-        width: 400px;
+        justify-content: center;
+        align-items: center;
+    }
+    p {
+        margin: 1rem;
     }
     img {
         width: 50%;

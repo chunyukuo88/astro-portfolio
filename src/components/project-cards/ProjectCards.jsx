@@ -11,32 +11,29 @@ const cardObjects = [
     {label: 'NODE gochenour CLI', component: Card5},
 ];
 
+const getScrollParent = (el) => {
+    while (el && el !== document.body) {
+        const { overflow, overflowY } = getComputedStyle(el);
+        if (/auto|scroll/.test(overflow + overflowY)) {
+            return el;
+        }
+        el = el.parentElement;
+    }
+    return window;
+};
+
 export default function ProjectCards() {
     const cardsRef = useRef([]);
 
     useEffect(() => {
         const cards = cardsRef.current.filter(Boolean);
-
-        const getScrollParent = (el) => {
-            while (el && el !== document.body) {
-                const { overflow, overflowY } = getComputedStyle(el);
-                if (/auto|scroll/.test(overflow + overflowY)) {
-                    return el;
-                }
-                el = el.parentElement;
-            }
-            return window;
-        };
-
         const scrollParent = getScrollParent(cards[0]);
-
         let naturalTops;
         const locked = new Array(cards.length).fill(false);
 
         requestAnimationFrame(() => {
-            naturalTops = cards.map((card) => {
-                const cardTop = card.getBoundingClientRect().top;
-                return cardTop + scrollParent.scrollTop;
+            naturalTops = cards.map((card, i) => {
+                return card.getBoundingClientRect().top;
             });
         });
 

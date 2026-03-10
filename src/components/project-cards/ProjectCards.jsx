@@ -1,6 +1,7 @@
 import styles from './project-cards.module.css';
 import { useEffect, useRef } from "preact/hooks";
 import { Card1, Card2, Card3, Card4, Card5 } from "./components/";
+import { getTranslationValue } from "./utils.js";
 
 const OVERLAP = 400;
 const cardObjects = [
@@ -45,11 +46,8 @@ export default function ProjectCards() {
                 if (i === 0 || locked[i]) {
                     return;
                 }
-                const targetTop = naturalTops[0] + i * OVERLAP;
-                const totalTravel = naturalTops[i] - targetTop;
-                const scrollStart = naturalTops[i] - window.innerHeight;
-                const progress = Math.min(1, Math.max(0, (scrollY - scrollStart) / totalTravel));
-                card.style.transform = `translateY(${-totalTravel * progress}px)`;
+                const {translation, progress} = getTranslationValue(naturalTops, i, scrollY);
+                card.style.transform = translation;
                 if (progress >= 1) {
                     locked[i] = true;
                 }

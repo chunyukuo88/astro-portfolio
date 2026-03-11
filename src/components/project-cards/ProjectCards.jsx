@@ -1,6 +1,7 @@
 import styles from './project-cards.module.css';
 import { useEffect, useRef } from "preact/hooks";
 import { Card1, Card2, Card3, Card4, Card5 } from "./components/";
+import { getTranslationValue } from "./utils.js";
 
 const OVERLAP = 400;
 const cardObjects = [
@@ -11,32 +12,29 @@ const cardObjects = [
     {label: 'NODE gochenour CLI', component: Card5},
 ];
 
+const getScrollParent = (el) => {
+    while (el && el !== document.body) {
+        const { overflow, overflowY } = getComputedStyle(el);
+        if (/auto|scroll/.test(overflow + overflowY)) {
+            return el;
+        }
+        el = el.parentElement;
+    }
+    return window;
+};
+
 export default function ProjectCards() {
     const cardsRef = useRef([]);
 
     useEffect(() => {
         const cards = cardsRef.current.filter(Boolean);
-
-        const getScrollParent = (el) => {
-            while (el && el !== document.body) {
-                const { overflow, overflowY } = getComputedStyle(el);
-                if (/auto|scroll/.test(overflow + overflowY)) {
-                    return el;
-                }
-                el = el.parentElement;
-            }
-            return window;
-        };
-
         const scrollParent = getScrollParent(cards[0]);
-
         let naturalTops;
         const locked = new Array(cards.length).fill(false);
 
         requestAnimationFrame(() => {
-            naturalTops = cards.map((card) => {
-                const cardTop = card.getBoundingClientRect().top;
-                return cardTop + scrollParent.scrollTop;
+            naturalTops = cards.map((card, i) => {
+                return card.getBoundingClientRect().top;
             });
         });
 
@@ -48,11 +46,8 @@ export default function ProjectCards() {
                 if (i === 0 || locked[i]) {
                     return;
                 }
-                const targetTop = naturalTops[0] + i * OVERLAP;
-                const totalTravel = naturalTops[i] - targetTop;
-                const scrollStart = naturalTops[i] - window.innerHeight;
-                const progress = Math.min(1, Math.max(0, (scrollY - scrollStart) / totalTravel));
-                card.style.transform = `translateY(${-totalTravel * progress}px)`;
+                const {translation, progress} = getTranslationValue(naturalTops, i, scrollY);
+                card.style.transform = translation;
                 if (progress >= 1) {
                     locked[i] = true;
                 }

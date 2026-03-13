@@ -37,7 +37,7 @@ describe("getTranslationValue()", () => {
             const scrollY = -7.71875;
             const result = getTranslationValue(naturalTops, i, scrollY);
             expect(result.progress).toBeCloseTo(0.5);
-            expect(result.translation).toBe(`translateY(${(-101 * 0.5) - 0}px)`);
+            expect(result.translation).toBe(`translateY(${(-101 * 0.5)}px)`);
         });
     });
 

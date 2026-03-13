@@ -67,7 +67,7 @@ export default function ProjectCards() {
                 {cardObjects.map((card, i) => (
                     <div
                         key={i}
-                        className={styles["card-wrapper"]}
+                        className={`styles["card-wrapper"] ${i}`}
                         ref={el => cardsRef.current[i] = el}
                     >
                         <card.component/>

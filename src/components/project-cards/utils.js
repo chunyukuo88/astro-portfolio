@@ -11,27 +11,23 @@ export function getTranslationValue(naturalTops, i, scrollY) {
 }
 
 function getDistanceToTravel(naturalTops, i, targetTop){
-    if (i === 1) {
-        return naturalTops[i] - targetTop;
+    let distanceOffset = 0;
+    switch (i) {
+        case 2: { distanceOffset = 100; break; }
+        case 3: { distanceOffset = 200; break; }
+        case 4: { distanceOffset = 300; break; }
+        default: break;
     }
-    if (i === 2) {
-        return naturalTops[i] - targetTop - 100;
-    }
-    if (i === 3) {
-        return naturalTops[i] - targetTop - 200;
-    }
-    if (i === 4) {
-        return naturalTops[i] - targetTop - 300;
-    }
+    return naturalTops[i] - targetTop - distanceOffset;
 }
 
 function getTranslation(i, totalDistanceToTravel, cappedProgress) {
-    const offset = getOffset(i);
+    const offset = getTranslationOffset(i);
     const translation = (-totalDistanceToTravel * cappedProgress) - offset;
     return `translateY(${translation}px)`;
 }
 
-function getOffset(i) {
+function getTranslationOffset(i) {
     switch (i) {
         case 1: return 0;
         case 2: return 100;

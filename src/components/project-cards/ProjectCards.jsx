@@ -3,7 +3,6 @@ import { useEffect, useRef } from "preact/hooks";
 import { Card1, Card2, Card3, Card4, Card5 } from "./components/";
 import { getTranslationValue } from "./utils.js";
 
-const OVERLAP = 400;
 const cardObjects = [
     {label: 'SvelteKit — WOH', component: Card1},
     {label: 'Serverless WOH API', component: Card2},

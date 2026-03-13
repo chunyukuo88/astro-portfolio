@@ -3,14 +3,22 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "astro": "astro",
     "build": "astro build",
+    "dev": "astro dev",
     "preview": "astro preview",
-    "astro": "astro"
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
     "@astrojs/preact": "^4.1.3",
     "astro": "^5.18.0",
     "preact": "^10.28.4"
+  },
+  "devDependencies": {
+    "@testing-library/preact": "^3.2.4",
+    "@vitest/ui": "^4.1.0",
+    "jsdom": "^28.1.0",
+    "vitest": "^4.1.0"
   }
 }

@@ -1,7 +1,6 @@
 const OVERLAP = 400;
 
 export function getTranslationValue(naturalTops, i, scrollY) {
-    console.dir(naturalTops)
     const targetTop = naturalTops[0] + i * OVERLAP;
     const totalDistanceToTravel = getDistanceToTravel(naturalTops, i, targetTop);
     const scrollStart = naturalTops[i] - window.innerHeight;

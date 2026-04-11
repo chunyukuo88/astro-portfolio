@@ -6,9 +6,9 @@ import ContentWrapper from "../components/ContentWrapper.astro";
 <BaseLayout>
     <ContentWrapper>
         <section>
-            <img src="/crane.png" alt="a line drawing of an origami crane">
+            <img height="150.3" width="160" src="/crane.png" alt="a line drawing of an origami crane">
             <p>Thanks for stopping by. I'm a bilingual software engineer based in central Ohio with experience in serverless architectures, single-page and SSR front ends.</p>
-            <p>Stay tuned for more content--in the meantime check out the links below!</p>
+            <p>Stay tuned for more content--in the meantime check out the links at the bottom of the screen!</p>
         </section>
     </ContentWrapper>
 </BaseLayout>
@@ -27,5 +27,12 @@ import ContentWrapper from "../components/ContentWrapper.astro";
     img {
         width: 50%;
         height: auto;
+        background-color: #000;
+        animation: fadein 15s ease-in;
+    }
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
     }
 </style>
